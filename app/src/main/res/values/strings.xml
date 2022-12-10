@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">DiceRollerApp</string>
+    <string name="roll">"Roll "</string>
+    <string-array name="choice_of_dice">
+        <item>"D2: Like a coin"</item>
+        <item>"D3: Three choices"</item>
+        <item>"D4: Tetrahedron with four faces"</item>
+        <item>"D5: Five faces … can only be simulated"</item>
+        <item>"D6: Classical six-faced die"</item>
+        <item>"D7: Seven faces … can only be simulated"</item>
+        <item>"D8: An octahedron has eight faces"</item>
+    </string-array>
+</resources>
