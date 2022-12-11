@@ -22,11 +22,12 @@ class MainActivity : AppCompatActivity(), OnItemSelectedListener {
             adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
             diceSpinner.adapter = adapter
         }
+        diceSpinner.onItemSelectedListener = this
         rollButton.setOnClickListener {
             Toast.makeText(this, "Die D${dice.numberOfFaces} rolled!", Toast.LENGTH_SHORT).show()
             rollDice()
         }
-        diceSpinner.onItemSelectedListener = this
+
     }
 
 
