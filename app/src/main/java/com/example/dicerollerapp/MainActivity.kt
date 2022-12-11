@@ -1,15 +1,16 @@
 package com.example.dicerollerapp
 
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.os.Bundle
 import android.view.View
 import android.widget.*
+import android.widget.AdapterView.OnItemSelectedListener
 import androidx.appcompat.app.AppCompatActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), OnItemSelectedListener {
 
     @SuppressLint("MissingInflatedId")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -24,6 +25,7 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "Dice Rolled!", Toast.LENGTH_SHORT).show()
             rollDice()
         }
+        diceSpinner.onItemSelectedListener = this
     }
 
     private fun rollDice() {
@@ -33,21 +35,18 @@ class MainActivity : AppCompatActivity() {
         resultTextView.text = rollResult.toString()
     }
 
-}
-
-
-class DiceSpinnerActivity : Activity(), AdapterView.OnItemSelectedListener
-{
     override fun onItemSelected(p0: AdapterView<*>?, view: View?, position: Int, id: Long) {
-
+        println("position = $position")
+        println("id = $id")
     }
 
     override fun onNothingSelected(p0: AdapterView<*>?) {
         TODO("Not yet implemented")
     }
 
-
 }
+
+
 
 class Dice(private val numberOfFaces: Int) {
     fun roll(): Int {
