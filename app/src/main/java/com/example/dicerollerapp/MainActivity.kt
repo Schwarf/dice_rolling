@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 class MainActivity : AppCompatActivity(), OnItemSelectedListener {
 
     @SuppressLint("MissingInflatedId")
+    private var dice : Dice = Dice()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,22 +23,22 @@ class MainActivity : AppCompatActivity(), OnItemSelectedListener {
             diceSpinner.adapter = adapter
         }
         rollButton.setOnClickListener {
-            Toast.makeText(this, "Dice Rolled!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Die D${dice.numberOfFaces} rolled!", Toast.LENGTH_SHORT).show()
             rollDice()
         }
         diceSpinner.onItemSelectedListener = this
     }
 
+
     private fun rollDice() {
-        val dice = Dice(6)
         val rollResult = dice.roll()
         val resultTextView: TextView = findViewById(R.id.throwResult)
         resultTextView.text = rollResult.toString()
     }
 
     override fun onItemSelected(p0: AdapterView<*>?, view: View?, position: Int, id: Long) {
-        println("position = $position")
-        println("id = $id")
+        val diceMaximumValue : Long = id+1;
+        dice.numberOfFaces = diceMaximumValue
     }
 
     override fun onNothingSelected(p0: AdapterView<*>?) {
@@ -48,8 +49,9 @@ class MainActivity : AppCompatActivity(), OnItemSelectedListener {
 
 
 
-class Dice(private val numberOfFaces: Int) {
-    fun roll(): Int {
+class Dice() {
+    var numberOfFaces: Long = 0
+    fun roll(): Long {
         return (1..numberOfFaces).random()
     }
 }
