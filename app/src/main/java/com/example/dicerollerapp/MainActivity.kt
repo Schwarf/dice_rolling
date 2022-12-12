@@ -35,8 +35,7 @@ class MainActivity : AppCompatActivity(), OnItemSelectedListener {
     private fun rollDice() {
         val rollResult = dice.roll()
         val resultTextView: TextView = findViewById(R.id.throwResult)
-        resultTextView.text = "Rolling ..."
-        resultTextView.text = rollResult.toString() + rollResult.toString()
+        resultTextView.text = rollResult.toString()
     }
 
     override fun onItemSelected(p0: AdapterView<*>?, view: View?, position: Int, id: Long) {
