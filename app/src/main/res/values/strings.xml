@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">DiceRollerApp</string>
     <string name="roll">"Roll "</string>
+    <string name="number_of_dice">Number of dice</string>
     <string-array name="choice_of_dice">
         <item>"D1: Only a Martin would use that"</item>
         <item>"D2: Like a coin"</item>
