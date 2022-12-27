@@ -57,7 +57,7 @@
         tools:text="1" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/textNumberOfDice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -70,6 +70,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/numberOfDiceInput"
         tools:layout_editor_absoluteX="96dp"
-        tools:layout_editor_absoluteY="215dp" />
+        tools:layout_editor_absoluteY="215dp"
+        android:background="@android:color/transparent"
+        android:autofillHints="" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
